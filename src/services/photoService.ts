@@ -7,7 +7,7 @@ export const fetchPhotos = async (): Promise<Photo[]> => {
     const response = await axios.get('https://api.unsplash.com/photos/random', {
       params: { count: 9 },
       headers: {
-        Authorization: `Client-ID 6QhhlDFHzC7xX8iNtJal3yYiq_NdIeUx8pcfA8dvuC8`
+        Authorization: `Client-ID ${process.env.REACT_APP_API_KEY}`
       }
     });
     return response.data.map((photo: any) => ({
